@@ -1,0 +1,28 @@
+<h1>Cart</h1>
+<app-header></app-header>
+<button class="btn btn-danger" (click)="clearCart()">clear cart</button>
+<p>Total Price: ${{totalPrice}}</p>
+
+<div class="row">
+        <div class="card col-md-2" *ngFor="let ca of cart" style="margin-right: 5px; margin-bottom: 15px;">
+            <img src="{{ca.image}}" alt="" class="img img-fluid" style="height: 200px; margin: 20%;">
+            <div class="card-body">
+                <h5 class="card-title">{{ca.name}}</h5>
+                <p class="card-content">Price: ${{ca.price}}</p>
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <p>quantity: {{ca.quantity}}</p>
+                    </div>
+                    <div class="input-group w-auto justify-content-end align-items-center">
+                       <input type="button" value="-" class="button-minus border rounded-circle  icon-shape icon-sm mx-1 " data-field="quantity" [disabled]="ca.quantity == 1" (click)="decrement(ca)">
+                       <input type="button" value="+" class="button-plus border rounded-circle icon-shape icon-sm " data-field="quantity" (click)="increment(ca)">
+                    </div>
+                 </div>
+              </div>
+              <div class="col-12">
+                 <div class="d-flex justify-content-between">
+                    <div>
+            </div>
+        </div>
+    </div>
+

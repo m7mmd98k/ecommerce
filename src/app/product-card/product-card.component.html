@@ -1,0 +1,23 @@
+<br>
+        <mat-form-field>
+            <mat-label>Select category</mat-label>
+            <mat-select (selectionChange)="onSelectedCategory($event)">
+                <mat-option [value]="0">All</mat-option>
+                <mat-option [value]="i+1" *ngFor=" let category of categories; index as i">{{category}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+
+<div class="row">
+            <div class="card col-md-2" *ngFor="let product of products" style="margin-right: 5px; margin-bottom: 15px;">
+            <img src="{{product.image}}" alt="" class="img img-fluid" style="height: 200px; margin: 20%;">
+            <div class="card-body">
+                <h3 class="card-title">{{product.name}}</h3>
+                <p class="card-content">Price: ${{product.price}}</p>
+                
+                <br *ngIf="!product.quantity">
+                <p class="bg-success text-white" *ngIf="product.quantity">Added to Cart</p>
+                <button class="btn btn-primary" [disabled]="product.quantity" (click)="addToCart(product)">Add to Cart</button>
+            </div>
+        </div>
+    </div>

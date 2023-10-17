@@ -1,0 +1,18 @@
+<h1>ToDo</h1>
+<app-header></app-header>
+<div class="container">
+    <div class="card" *ngFor="let record of todos">
+        <span class="badge badge-danger">Danger</span>
+        <div class="card-body">
+            <div class="alert alert-info row" role="alert">
+                <div class="col-md-9"><strong >{{record.todo}}</strong></div>
+                <div class="col-md-2"> <span>completed:</span></div>
+                <button type="button" class="btn btn-light col-md-1">
+                    {{record.completed? '✅':'❌'}}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
